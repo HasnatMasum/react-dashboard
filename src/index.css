@@ -46,3 +46,10 @@ body {
   font-style: italic;
   text-decoration: underline;
 }
+ .sub-title{
+   margin-bottom: 20px;
+   background: #001529;
+ }
+ .sub-title .ant-card-body{
+    padding:5px;
+ }
