@@ -1,13 +1,48 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    /* background: #112545; */
+    /* blue: "#1677ff" blue1: "#e6f4ff" blue2: "#bae0ff" blue3: "#91caff" blue4: "#69b1ff" blue5: "#4096ff" blue6: "#1677ff" blue7: "#0958d9" blue8: "#003eb3" blue9: "#002c8c" blue10: "#001d66" blue-1: "#e6f4ff" blue-2: "#bae0ff" blue-3: "#91caff" blue-4: "#69b1ff" blue-5: "#4096ff" blue-6: "#1677ff" blue-7: "#0958d9" blue-8: "#003eb3" blue-9: "#002c8c" blue-10: "#001d66" */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.top-header-right svg {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.ant-menu {
+    border-right: 0px !important;
+    background: transparent !important;
+}
+
+.ant-menu-item,
+.ant-menu-item-selected {
+    height: 15px !important;
+    padding: 0 10px !important;
+    margin: 0 0 10px !important;
+    background: none !important;
+    line-height: 20px !important;
+}
+
+.ant-menu-item:hover {
+    color: #1677ff !important;
+}
+.ant-menu-item-group-title{
+  color:#52c41a !important;
+  font-style: italic;
+  text-decoration: underline;
 }
