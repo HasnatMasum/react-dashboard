@@ -1,18 +1,23 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { BsFillMoonFill, BsBrightnessHighFill } from "react-icons/bs";
 import { VscSettingsGear, VscBell, VscAccount } from "react-icons/vsc";
 import {MenuFoldOutlined,MenuUnfoldOutlined } from "@ant-design/icons";
+import useThemeMode from '../hooks/useThemeMode';
 import { Layout } from "antd";
+import {themeModeContext} from '../App';
 const { Header } = Layout;
 
-const TopHeader = ({background,color,collapsed,setCollapsed,isDarkMode,
-    setIsDarkMode}) => {
+const TopHeader = () => {
+      const {mode:{background,background1,color4,color04}} = useThemeMode();
+      const {collapsed,setCollapsed,isDarkMode,
+        setIsDarkMode} = useContext(themeModeContext);
+       
     return (
         <Header
             className="top-header"
             style={{
-              background: background,
-              color: color
+              background: isDarkMode ? background : background1,
+              color: isDarkMode ? color4 : color04
             }}
           >
             <div

@@ -1,18 +1,23 @@
-import React from "react";
+import React,{useContext} from "react";
 import profilePic from "../assets/hasnat.jpg";
 import SideMenu from './SideMenu'
+import useThemeMode from '../hooks/useThemeMode';
 import { Layout,Typography } from "antd";
+import {themeModeContext} from '../App';
 const { Sider } = Layout;
 const { Title, Text } = Typography;
 
 
-const Sidebar = ({ background,color1,color2,color3,color4,paddingTop,width,collapsed }) => {
+const Sidebar = () => {
+  const {mode:{background,background1,color1,color01,color2,color02,color3,color03,paddingTop,paddingTop1,width,width1}} = useThemeMode();
+  const {collapsed,isDarkMode} = useContext(themeModeContext);
+  
   return (
     <Sider
       style={{
         height: "100vh",
-        padding: "0 15px",
-        background: background,
+        padding: "0 10px",
+        background: isDarkMode ? background : background1,
         transition: "all .7s"
       }}
       trigger={null}
@@ -22,7 +27,7 @@ const Sidebar = ({ background,color1,color2,color3,color4,paddingTop,width,colla
       {!collapsed ? (
         <Title
           style={{
-            color: color1,
+            color: isDarkMode ?color1:color01,
             marginTop: "15px"
           }}
           level={4}
@@ -35,11 +40,11 @@ const Sidebar = ({ background,color1,color2,color3,color4,paddingTop,width,colla
 
       <div
         className="profile-photo"
-        style={{ paddingTop: paddingTop }}
+        style={{ paddingTop: collapsed ? paddingTop: paddingTop1 }}
       >
         <img
           style={{
-            width: width,
+            width: collapsed ? width : width1,
             borderRadius: "50%"
           }}
           src={profilePic}
@@ -50,7 +55,7 @@ const Sidebar = ({ background,color1,color2,color3,color4,paddingTop,width,colla
             level={5}
             style={{
               margin: "10px 0 0",
-              color: color2
+              color: isDarkMode ?color2: color02
             }}
           >
             Hasnat Masum
@@ -60,7 +65,7 @@ const Sidebar = ({ background,color1,color2,color3,color4,paddingTop,width,colla
         )}
         <Text
           style={{
-            color: color3,
+            color: isDarkMode ? color3: color03,
             textTransform: "uppercase",
             fontSize: "10px",
             fontWeight: "bold",
@@ -71,7 +76,7 @@ const Sidebar = ({ background,color1,color2,color3,color4,paddingTop,width,colla
         </Text>
       </div>
       
-      <SideMenu background={background} color={color4} />
+      <SideMenu />
     </Sider>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {  Menu } from "antd";
   import { AiOutlineTeam,
     AiOutlineHome,
@@ -12,6 +12,8 @@ import {  Menu } from "antd";
   } from "react-icons/ai";
   import { TbFileInvoice } from "react-icons/tb";
   import { useNavigate } from "react-router-dom";
+  import useThemeMode from '../hooks/useThemeMode';
+  import {themeModeContext} from '../App';
 
   function getItem(label, key, icon, children, type) {
     return {
@@ -41,15 +43,16 @@ import {  Menu } from "antd";
       getItem('line chart', '/line-chart',<AiOutlineLineChart />)
     ], 'group'),
   ];
-const SideMenu = ({background,color}) => {
+const SideMenu = () => {
+  const {mode:{background,background1,color4,color04}} = useThemeMode();
+      const {isDarkMode} = useContext(themeModeContext);
   const navigate = useNavigate();
     return (
         <Menu
           onClick = {(item)=>navigate(item.key)}
             style={{
-              background: background,
-              color: color,
-              // marginTop:'10px'
+              background: isDarkMode ? background : background1,
+              color: isDarkMode ? color4 : color04,
               marginBottom: '0px',
               fontSize: '13px'
             }}

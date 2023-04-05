@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import useThemeMode from '../hooks/useThemeMode';
+import {themeModeContext} from '../App';
 import { Layout } from "antd";
 import {Routes,Route} from 'react-router-dom';
 import Dashboard from '../dashboard';
@@ -11,14 +14,17 @@ import BarChart from '../charts/BarChart';
 import LineChart from '../charts/LineChart';
 import PiChart from '../charts/PiChart';
 const {  Content } = Layout;
-const MainContent = ({background,color})=>{
+
+const MainContent = ()=>{
+    const {mode:{background,background1,color4,color04}} = useThemeMode();
+    const {isDarkMode} = useContext(themeModeContext);
     return(
         <Content
             style={{
-              margin: "24px 16px",
+              margin: "16px",
               padding: 24,
-              background: background,
-              color: color
+              background: isDarkMode ? background : background1,
+              color: isDarkMode ? color4 : color04,
             }}
           >
             <Routes>
