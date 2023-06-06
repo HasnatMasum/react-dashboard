@@ -1,21 +1,35 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import profilePic from "../assets/hasnat.jpg";
-import SideMenu from './SideMenu'
-import useThemeMode from '../hooks/useThemeMode';
-import { Layout,Typography } from "antd";
-import {themeModeContext} from '../App';
+import SideMenu from "./SideMenu";
+import useThemeMode from "../hooks/useThemeMode";
+import { Layout, Typography } from "antd";
+import { themeModeContext } from "../App";
 const { Sider } = Layout;
 const { Title, Text } = Typography;
 
-
 const Sidebar = () => {
-  const {mode:{background,background1,color1,color01,color2,color02,color3,color03,paddingTop,paddingTop1,width,width1}} = useThemeMode();
-  const {collapsed,isDarkMode} = useContext(themeModeContext);
-  
+  const {
+    mode: {
+      background,
+      background1,
+      color1,
+      color01,
+      color2,
+      color02,
+      color3,
+      color03,
+      paddingTop,
+      paddingTop1,
+      width,
+      width1
+    }
+  } = useThemeMode();
+  const { collapsed, isDarkMode } = useContext(themeModeContext);
+
   return (
     <Sider
       style={{
-        height: "100vh",
+        minHeight: "100vh",
         padding: "0 10px",
         background: isDarkMode ? background : background1,
         transition: "all .7s"
@@ -27,7 +41,7 @@ const Sidebar = () => {
       {!collapsed ? (
         <Title
           style={{
-            color: isDarkMode ?color1:color01,
+            color: isDarkMode ? color1 : color01,
             marginTop: "15px"
           }}
           level={4}
@@ -40,7 +54,7 @@ const Sidebar = () => {
 
       <div
         className="profile-photo"
-        style={{ paddingTop: collapsed ? paddingTop: paddingTop1 }}
+        style={{ paddingTop: collapsed ? paddingTop : paddingTop1 }}
       >
         <img
           style={{
@@ -55,7 +69,7 @@ const Sidebar = () => {
             level={5}
             style={{
               margin: "10px 0 0",
-              color: isDarkMode ?color2: color02
+              color: isDarkMode ? color2 : color02
             }}
           >
             Hasnat Masum
@@ -65,17 +79,17 @@ const Sidebar = () => {
         )}
         <Text
           style={{
-            color: isDarkMode ? color3: color03,
+            color: isDarkMode ? color3 : color03,
             textTransform: "uppercase",
             fontSize: "10px",
             fontWeight: "bold",
             marginTop: "6px"
           }}
         >
-          Admin 
+          Admin
         </Text>
       </div>
-      
+
       <SideMenu />
     </Sider>
   );

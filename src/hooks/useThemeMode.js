@@ -3,7 +3,8 @@ const useThemeMode = ()=>{
     
     const mode = {
         background :"#001529",
-        background1  : "#d2e0fa",
+        // background1  : "#d2e0fa",
+        background1  : "#AED6F1",
         color1:"#fff", 
         color01 : "rgb(0, 21, 41)", 
         color2:"#f3b765",

@@ -21,9 +21,11 @@ const MainContent = ()=>{
     return(
         <Content
             style={{
-              margin: "16px",
+            //   margin: "16px",
               padding: 24,
-              background: isDarkMode ? background : background1,
+            //   background: isDarkMode ? background : background1,
+            //background: isDarkMode ? '#212F3D ' : '#AED6F1' ,
+            background: isDarkMode ? '#212F3D ' : '#d2e0fa' ,
               color: isDarkMode ? color4 : color04,
             }}
           >

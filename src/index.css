@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    /* background: #112545; */
+    /* background:#000;  */
     /* blue: "#1677ff" blue1: "#e6f4ff" blue2: "#bae0ff" blue3: "#91caff" blue4: "#69b1ff" blue5: "#4096ff" blue6: "#1677ff" blue7: "#0958d9" blue8: "#003eb3" blue9: "#002c8c" blue10: "#001d66" blue-1: "#e6f4ff" blue-2: "#bae0ff" blue-3: "#91caff" blue-4: "#69b1ff" blue-5: "#4096ff" blue-6: "#1677ff" blue-7: "#0958d9" blue-8: "#003eb3" blue-9: "#002c8c" blue-10: "#001d66" */
 }
 
@@ -46,7 +46,7 @@ body {
   font-style: italic;
   text-decoration: underline;
 }
- .sub-title{
+.page-title.sub-title{
    margin-bottom: 20px;
    background: #001529;
  }
