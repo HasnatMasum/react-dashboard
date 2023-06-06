@@ -53,28 +53,10 @@ const Dashboard = () => {
           />
         </Col>
         <Col span={16}>
-          <Card
-            style={{
-              marginTop: "16px",
-              background: isDarkMode ? background : background1,
-              boxShadow: "0 0 5px #d2e0fa",
-              border: "0"
-            }}
-          >
-            <ChartLine height="40vh" />
-          </Card>
+          <ChartLine height="40vh" />
         </Col>
         <Col span={8}>
-          <Card
-            style={{
-              marginTop: "16px",
-              background: isDarkMode ? background : background1,
-              boxShadow: "0 0 5px #d2e0fa",
-              border: "0"
-            }}
-          >
-            <ChartPi legends={true} height="40vh" />
-          </Card>
+          <ChartPi legends={true} height="40vh" />
         </Col>
       </Row>
       <Row gutter={16}></Row>
