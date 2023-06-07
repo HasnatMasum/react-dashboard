@@ -1,5 +1,6 @@
+import ChartBar from "../components/ChartBar";
 const BarChart = () => {
-  return <div>BarChart...</div>;
+  return <ChartBar height="70vh" />;
 };
 
 export default BarChart;

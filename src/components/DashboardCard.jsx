@@ -3,9 +3,9 @@ import { Card, Progress } from "antd";
 import useThemeMode from "../hooks/useThemeMode";
 import { themeModeContext } from "../App";
 
-const DashboardCard = ({ title, icon, parcent }) => {
+const DashboardCard = ({ title, icon, parcent, count }) => {
   const {
-    mode: { background, background1, color4, color04 }
+    mode: { background, background1, color4, color04 },
   } = useThemeMode();
   const { isDarkMode } = useContext(themeModeContext);
   return (
@@ -13,7 +13,7 @@ const DashboardCard = ({ title, icon, parcent }) => {
       style={{
         background: isDarkMode ? background : background1,
         boxShadow: "0 0 5px #d2e0fa",
-        border: "0"
+        border: "0",
       }}
     >
       <div
@@ -21,12 +21,14 @@ const DashboardCard = ({ title, icon, parcent }) => {
           display: "flex",
           color: isDarkMode ? color4 : color04,
           justifyContent: "space-between",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <div>
           <h3>{title}</h3>
-          <p>{icon} 1211</p>
+          <p>
+            {icon} {count}
+          </p>
         </div>
         <div>
           <Progress

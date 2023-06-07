@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import { Card, Col, Row, Typography } from "antd";
-import { AiOutlineLike } from "react-icons/ai";
+import {
+  AiOutlineLike,
+  AiOutlineShareAlt,
+  AiOutlineCloudDownload,
+} from "react-icons/ai";
 import useThemeMode from "../hooks/useThemeMode";
 import { themeModeContext } from "../App";
 import ChartLine from "../components/ChartLine";
@@ -9,7 +13,7 @@ import DashboardCard from "../components/DashboardCard";
 
 const Dashboard = () => {
   const {
-    mode: { background, background1, color4, color04 }
+    mode: { background, background1, color4, color04 },
   } = useThemeMode();
   const { isDarkMode } = useContext(themeModeContext);
   return (
@@ -19,7 +23,7 @@ const Dashboard = () => {
           background: isDarkMode ? background : background1,
           boxShadow: "0 0 5px #d2e0fa",
           border: "0",
-          marginBottom: "16px"
+          marginBottom: "16px",
         }}
       >
         <Typography.Title
@@ -33,23 +37,26 @@ const Dashboard = () => {
       <Row gutter={16}>
         <Col span={8}>
           <DashboardCard
-            title="User likes"
+            title="Likes"
             icon={<AiOutlineLike />}
             parcent="70"
+            count="544620"
           />
         </Col>
         <Col span={8}>
           <DashboardCard
-            title="User likes"
-            icon={<AiOutlineLike />}
-            parcent="50"
-          />
-        </Col>
-        <Col span={8}>
-          <DashboardCard
-            title="User likes"
-            icon={<AiOutlineLike />}
+            title="Share"
+            icon={<AiOutlineShareAlt />}
             parcent="60"
+            count="144530"
+          />
+        </Col>
+        <Col span={8}>
+          <DashboardCard
+            title="Download"
+            icon={<AiOutlineCloudDownload />}
+            parcent="50"
+            count="54620"
           />
         </Col>
         <Col span={16}>
